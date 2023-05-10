@@ -1,0 +1,244 @@
+:root{
+    --navBarBg: rgb(23, 23, 46);
+    --textColor: rgb(212, 212, 212);
+    --loginBg: rgba(0,0,0,.3);
+    --disabled: rgba(65, 65, 65, 0.3);
+    --buttonNav: rgb(49, 49, 98);
+}
+
+*{
+    padding: 0px;
+    margin: 0;
+    font-family:  'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: linear-gradient(to bottom, #282b6f, #232262, #1e1955, #181149, #13073d);
+}
+
+/* Navbar */
+.nav{
+    position: sticky;
+    top: 0;
+    background-color: var(--navBarBg);
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 30px 5px 30px;
+    border-bottom: 3px solid var(--loginBg);
+}
+
+/* Navbar links */
+
+.navLinksContainer{
+    display: flex;
+}
+
+.navLinksContainer > li{
+    display: flex;
+    margin-left: 10px;
+    flex-direction: column;
+    position: relative;
+    list-style: none;
+    animation: navLink 1.6s cubic-bezier(0.19, 1, 0.22, 1) none;
+}
+
+.navLinksContainer > li:nth-child(2){
+    margin-left: 30px;
+    position: relative;
+    list-style: none;
+    animation: navLink 1s cubic-bezier(0.19, 1, 0.22, 1) none;
+}
+.navLinksContainer > li:nth-child(3){
+    margin-left: 30px;
+    position: relative;
+    list-style: none;
+    animation: navLink 1s cubic-bezier(0.19, 1, 0.22, 1) none;
+}
+
+.navLinksContainer > li > a{
+    color: white;
+    font-size: 20px;
+    font-weight: 400;
+    padding: 3px 15px 3px 15px;
+    text-decoration: none;
+    background-color: var(--buttonNav);
+    border-radius: 20px;
+    border: 1.5px solid var(--navBarBg);
+    transition: .3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.navLinksContainer > li > a:hover{
+    border: 1.5px solid #ffffff7b;
+    position: relative;
+    transform: scale(1.1);
+    box-shadow: 5px 5px 3px rgba(0,0,0,.3);
+}
+
+h1{
+    color: var(--textColor);
+}
+
+/* Login */
+
+.login{
+    padding: 30px;
+    margin: 70px auto;
+    height: 70vh;
+    width: 70%;
+    background-color: var(--loginBg);
+    display: flex;
+    border-radius: 20px;
+}
+
+.loginForm{
+    display: flex;
+    margin: auto;
+    padding-bottom: 100px;
+    width: 355px;
+    flex-direction: column;
+    align-items: center;
+}
+
+.loginForm > label{
+    text-align: center;
+    color: var(--textColor);
+    font-size: x-large;
+    font-weight: 500;
+    transition: .5s;
+    animation: label 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+
+.loginForm > label:last-of-type{
+    font-size: medium;
+    display: block;
+}
+
+
+.loginForm > input{
+    height: 35px;
+    border-radius: 20px;
+    outline: none;
+    border: 0px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    transition: .5s;
+    width: 85%;
+    background-color: var(--loginBg);
+    text-align: center;
+    color: white;
+    box-shadow: 0px 0px 0px transparent;
+}
+
+.loginForm > input:disabled{
+    border: 0px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    transition: .5s;
+    width: 70%;
+    background-color: var(--disabled);
+    text-align: center;
+    box-shadow: 0px 0px 0px transparent;
+}
+
+.loginForm > input:nth-child(2){
+    animation: inputStart .8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.loginForm > input:nth-child(4){
+    animation: inputStart 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.loginForm > input:nth-child(6){
+    animation: inputStart 1.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+
+.loginForm > input:focus{
+    position: relative;
+    transform: scale(1.1);
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.593);
+}
+
+.loginImg{
+    width: 50%;
+    margin: auto;
+}
+
+.sendButton{
+    font-size: x-large;
+    padding: 4px 14px 6px 14px;
+    border: 0;
+    border-radius: 20px;
+    margin-top: 60px;
+    font-weight: 400;
+    background-color: #179c74;
+    color: white;
+    transition: .3s;
+    cursor: pointer;
+}
+
+.sendButton:hover{
+    position: relative;
+    transform: scale(1.1);
+}
+
+.sendButton:active{
+    position: relative;
+    transform: scale(0.8);
+}
+
+@keyframes inputStart {
+    0%{
+        transform:  translateX(-500px);
+        opacity: 0;
+        
+    }
+    80%{
+        transform:  translateX(10px);
+    }
+    100%{
+        transform:  translateX(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes navLink {
+    0%{
+        transform:  translatey(-50px);
+        opacity: 0;
+        
+    }
+    100%{
+        transform:  translatey(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes label {
+    0%{
+        transform:  translatey(-50px);
+        opacity: 0;  
+    }
+
+    100%{
+        transform:  translatey(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes animationLink {
+    0%{
+        width: 0%;
+    }
+    100%{
+        width: 100%;
+    }
+}
